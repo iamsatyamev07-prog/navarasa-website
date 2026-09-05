@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Navarasa — IISER Pune Dance Club</title>
+<meta name="description" content="Navarasa is the dance club of IISER Pune. Workshops, classes, performances and competitions across Kathak, Bollywood and Odissi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Permanent+Marker&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<div class="topbar" id="topbar">
+  <a href="#top" class="brand"><img src="assets/logo.png" alt="Navarasa logo"><span>NAVARASA</span></a>
+  <nav class="nav-links">
+    <a href="#movement">What we do</a>
+    <a href="#events">Events</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#booking">Book the room</a>
+    <a href="#team">Team</a>
+  </nav>
+  <div class="nav-cta">
+    <a href="#join" class="btn btn-acid" style="padding:10px 22px; font-size:13px;">Join us</a>
+    <button class="menu-btn" id="menuOpen" aria-label="Open menu">☰</button>
+  </div>
+</div>
+
+<div class="drawer" id="drawer">
+  <div class="drawer-head">
+    <span class="brand"><img src="assets/logo.png" alt="" style="height:30px"></span>
+    <button class="menu-btn" id="menuClose" aria-label="Close menu" style="border-color:var(--line)">✕</button>
+  </div>
+  <nav>
+    <a href="#movement" class="dl">What we do</a>
+    <a href="#classes" class="dl">Classes</a>
+    <a href="#events" class="dl">Events</a>
+    <a href="#gallery" class="dl">Gallery</a>
+    <a href="#booking" class="dl">Book the room</a>
+    <a href="#team" class="dl">Team</a>
+    <a href="#join" class="dl" style="color:var(--acid)">Join Navarasa</a>
+  </nav>
+</div>
+
+<!-- ============ HERO ============ -->
+<header id="top" class="hero">
+  <div class="hero-media">
+    <img src="assets/performance-stage.jpg" alt="Navarasa dancers performing on stage">
+  </div>
+  <span class="blob blob-acid"></span>
+  <span class="blob blob-coral"></span>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="eyebrow-pill">IISER Pune <b>·</b> Dance Club <b>·</b> est. 2026</span>
+    </div>
+    <h1><span>NAVA</span><span>RASA</span></h1>
+    <span class="brush">nine emotions. one stage.</span>
+    <div class="hero-row">
+      <p class="hero-sub">We're the dance club at IISER Pune — Kathak, Bollywood and Odissi, workshops that need no experience, and a stage every few months to put it all on.</p>
+      <div style="display:flex; gap:14px; flex-wrap:wrap;">
+        <a href="#join" class="btn btn-acid">Join Navarasa</a>
+        <a href="#gallery" class="btn btn-outline">Watch us move</a>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-cue"><span>SCROLL</span><span class="line"></span></div>
+</header>
+
+<!-- ============ MARQUEE — the nine rasas ============ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track" id="marqueeTrack">
+    <span>SHRINGARA</span><span class="on">LOVE</span><span>HASYA</span><span class="on">LAUGHTER</span><span>KARUNA</span><span class="on">COMPASSION</span><span>RAUDRA</span><span class="on">ANGER</span><span>VEERA</span><span class="on">HEROISM</span><span>BHAYANAKA</span><span class="on">FEAR</span><span>BIBHATSA</span><span class="on">DISGUST</span><span>ADBHUTA</span><span class="on">WONDER</span><span>SHANTA</span><span class="on">PEACE</span>
+  </div>
+</div>
+
+<!-- ============ WHAT WE DO ============ -->
+<section class="section" id="movement">
+  <div class="wrap">
+    <div class="head-row">
+      <h2>What we do</h2>
+      <p>Navarasa takes its name from the nine rasas of Indian aesthetic theory — every rehearsal is really about finding one of them in your body.</p>
+    </div>
+    <div class="tiles">
+      <div class="tile">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="var(--acid)" stroke-width="1.6"><path d="M12 2v6M8 22l4-6 4 6M6 10a6 6 0 0012 0"/></svg>
+        <h3>Workshops</h3>
+        <p>Monthly sessions across different styles. Come curious — no prior dance training required, ever.</p>
+      </div>
+      <div class="tile">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="var(--coral)" stroke-width="1.6"><path d="M4 19h16M8 19V9m4 10V5m4 14v-7"/></svg>
+        <h3>Classes</h3>
+        <p>External teachers lead regular sessions in Kathak, Bollywood and Odissi — see the styles below.</p>
+      </div>
+      <div class="tile">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="1.6"><path d="M3 21h18M6 21V10l6-6 6 6v11"/></svg>
+        <h3>Performances</h3>
+        <p>Showcases, Spotlight nights and campus performances — the stage is where the work pays off.</p>
+      </div>
+      <div class="tile">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="var(--violet)" stroke-width="1.6"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+        <h3>Competitions</h3>
+        <p>We compete at IICM, Karavaan and Nupura — and train hard in the weeks before each one.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CLASSES ============ -->
+<section class="section" id="classes">
+  <div class="wrap">
+    <div class="head-row">
+      <h2>Learn the form</h2>
+      <p>Three styles run through the year, each led by an outside teacher who trains us properly, not just for a showcase.</p>
+    </div>
+    <div class="classgrid">
+      <div class="classcard">
+        <img src="assets/kathak.jpg" alt="Kathak dancers in performance">
+        <div class="cc-body"><span class="tag">CLASSICAL</span><h3>Kathak</h3><p>Storytelling through footwork, spins and expression.</p></div>
+      </div>
+      <div class="classcard">
+        <img src="assets/bollywood.jpg" alt="Bollywood dance rehearsal">
+        <div class="cc-body"><span class="tag">COMMERCIAL</span><h3>Bollywood</h3><p>High energy, group choreography, our most-danced style.</p></div>
+      </div>
+      <div class="classcard">
+        <img src="assets/odissi.jpg" alt="Odissi dancers on stage">
+        <div class="cc-body"><span class="tag">CLASSICAL</span><h3>Odissi</h3><p>Sculptural poses and rhythm rooted in Odisha's temples.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EVENTS ============ -->
+<section class="section events-section" id="events">
+  <div class="wrap">
+    <div class="head-row">
+      <h2>What's coming</h2>
+      <p>A mix of confirmed dates, monthly regulars and ideas we're still building. Follow Instagram for exact timings.</p>
+    </div>
+    <div class="filter-row">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="october">October</button>
+      <button class="filter-btn" data-filter="monthly">Monthly</button>
+      <button class="filter-btn" data-filter="proposed">Proposed</button>
+    </div>
+    <div class="event-grid" id="eventGrid">
+      <div class="event-card" data-cat="october">
+        <div class="stamp">OCT</div>
+        <h3>Garba Night</h3>
+        <p>A full circle of Garba on campus — open to everyone, no steps to learn in advance.</p>
+        <span class="tag status-october">OCTOBER</span>
+      </div>
+      <div class="event-card" data-cat="october">
+        <div class="stamp">OCT</div>
+        <h3>Dance Reels</h3>
+        <p>A reel-making competition — shoot, edit and post your best 30 seconds of movement.</p>
+        <span class="tag status-october">OCTOBER</span>
+      </div>
+      <div class="event-card" data-cat="october">
+        <div class="stamp">OCT</div>
+        <h3>Spotlight: Nrittarang</h3>
+        <p>Our Spotlight series turns the stage over to solo and small-group performances.</p>
+        <span class="tag status-october">OCTOBER</span>
+      </div>
+      <div class="event-card" data-cat="monthly">
+        <div class="stamp">EVERY<br>MONTH</div>
+        <h3>Move &amp; Chill</h3>
+        <p>An informal monthly session — put on a playlist, dance badly, chill properly.</p>
+        <span class="tag status-monthly">MONTHLY</span>
+      </div>
+      <div class="event-card" data-cat="proposed">
+        <div class="stamp">SOON</div>
+        <h3>Dance Battles</h3>
+        <p>One-on-one, freestyle, crowd-judged. Still finding its format — ideas welcome.</p>
+        <span class="tag status-proposed">PROPOSED</span>
+      </div>
+      <div class="event-card" data-cat="proposed">
+        <div class="stamp">SOON</div>
+        <h3>Open-Stage</h3>
+        <p>A no-pressure open floor for anyone who wants five minutes in front of a crowd.</p>
+        <span class="tag status-proposed">PROPOSED</span>
+      </div>
+      <div class="event-card" data-cat="proposed">
+        <div class="stamp">SOON</div>
+        <h3>Intra-IISER Cup</h3>
+        <p>House-vs-house dance competitions, entirely run within campus.</p>
+        <span class="tag status-proposed">PROPOSED</span>
+      </div>
+    </div>
+    <p class="events-note">Want the exact date and venue for any of these? <a href="https://instagram.com/_navarasa_" target="_blank" rel="noopener">Check @_navarasa_ on Instagram →</a></p>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section class="section" id="gallery">
+  <div class="wrap">
+    <div class="head-row">
+      <h2>On stage</h2>
+      <p>Moments from rehearsals, showcases and the nights that make the practice worth it.</p>
+    </div>
+    <div class="gallery-grid" id="galleryGrid">
+      <div class="gitem big"><img src="assets/dancers-stage-1.jpg" alt="Navarasa dancers in costume on stage" data-full="assets/dancers-stage-1.jpg"></div>
+      <div class="gitem"><img src="assets/kathak.jpg" alt="Kathak performance" data-full="assets/kathak.jpg"></div>
+      <div class="gitem"><img src="assets/bollywood.jpg" alt="Bollywood performance" data-full="assets/bollywood.jpg"></div>
+      <div class="gitem"><img src="assets/odissi.jpg" alt="Odissi performance" data-full="assets/odissi.jpg"></div>
+      <div class="gitem"><img src="assets/performance-stage.jpg" alt="Contemporary dance on stage" data-full="assets/performance-stage.jpg"></div>
+      <div class="gitem"><img src="assets/dancers-group-1.jpg" alt="Ribbon dance performance" data-full="assets/dancers-group-1.jpg"></div>
+      <div class="gitem big"><img src="assets/dancers-group-2.jpg" alt="Navarasa team photo after a show" data-full="assets/dancers-group-2.jpg"></div>
+    </div>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close">✕</button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+<!-- ============ BOOKING ============ -->
+<section class="section booking" id="booking">
+  <span class="vertical-note">BOOK THE ROOM</span>
+  <div class="wrap">
+    <div class="head-row">
+      <h2>Your new favourite room</h2>
+      <p>The dance room runs on a shared calendar. Tell us when you need it and we'll confirm by email.</p>
+    </div>
+    <div class="booking-wrap">
+      <div>
+        <p style="color:var(--paper-dim); font-size:15px; max-width:400px;">The space is open to every club member for practice, choreography sessions or just messing around with music. Slots are first-come, first-served.</p>
+        <div class="room-facts">
+          <div><span>Location</span><b>H2 Parking-Lot</b></div>
+          <div><span>Booking</span><b>By email, 24–48h ahead</b></div>
+          <div><span>Contact</span><b>dance@sac.iiserpune.ac.in</b></div>
+        </div>
+      </div>
+
+      <form class="form-card" id="bookingForm">
+        <div class="field-row">
+          <div class="field"><label for="bName">Your name</label><input type="text" id="bName" required></div>
+          <div class="field"><label for="bEmail">Email</label><input type="email" id="bEmail" required></div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label for="bDate">Date</label><input type="date" id="bDate" required></div>
+          <div class="field"><label for="bSlot">Time slot</label>
+            <select id="bSlot" required>
+              <option value="">Select a slot</option>
+              <option>7:00 AM – 9:00 AM</option>
+              <option>5:00 PM – 7:00 PM</option>
+              <option>7:00 PM – 9:00 PM</option>
+              <option>9:00 PM – 11:00 PM</option>
+            </select>
+          </div>
+        </div>
+        <div class="field"><label for="bPurpose">What's it for?</label><textarea id="bPurpose" rows="3" placeholder="e.g. Bollywood choreography practice for Spotlight"></textarea></div>
+        <button type="submit" class="btn btn-magenta-outline" style="width:100%;">Request this slot</button>
+        <p class="form-note">This opens your email app with the details filled in, addressed to dance@sac.iiserpune.ac.in — we usually confirm within a day.</p>
+        <div class="confirm-box" id="confirmBox">Your email app should now be open with the request drafted. Send it and we'll get back to you.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TEAM ============ -->
+<section class="section" id="team">
+  <div class="wrap">
+    <div class="head-row">
+      <h2>The people who move it</h2>
+      <p>General coordinators run the club day to day; the core team keeps everything else — logistics, media, design and choreography — moving.</p>
+    </div>
+
+    <div class="coord-row">
+      <div class="coord-card">
+        <div class="coord-photo"><img src="assets/team-krittika.jpg" alt="Krittika Bhattacharya"></div>
+        <h3>Krittika Bhattacharya</h3><span>GENERAL COORDINATOR</span>
+      </div>
+      <div class="coord-card">
+        <div class="coord-photo"><img src="assets/team-pratyush.jpg" alt="Pratyush Sahu"></div>
+        <h3>Pratyush Sahu</h3><span>GENERAL COORDINATOR</span>
+      </div>
+      <div class="coord-card">
+        <div class="coord-photo"><img src="assets/team-arkadeep.jpg" alt="Arkadeep Dey"></div>
+        <h3>Arkadeep Dey</h3><span>GENERAL COORDINATOR · PHD 1ST YEAR</span>
+      </div>
+    </div>
+
+    <div class="core-grid">
+      <div class="core-card"><div class="core-photo"><img src="assets/team-rashi.jpg" alt="Rashi Sangoi"></div><h4>Rashi Sangoi</h4><span>LOGISTICS</span></div>
+      <div class="core-card"><div class="core-photo"><img src="assets/team-satyamev.jpg" alt="Satyamev Aman"></div><h4>Satyamev Aman</h4><span>SOCIAL MEDIA</span></div>
+      <div class="core-card"><div class="core-photo"><img src="assets/team-naityik.jpg" alt="Naityik Singh"></div><h4>Naityik Singh</h4><span>DESIGN</span></div>
+      <div class="core-card"><div class="core-photo"><img src="assets/team-ayushb.jpg" alt="Ayush Bhushan"></div><h4>Ayush Bhushan</h4><span>MUSIC EDITING</span></div>
+      <div class="core-card"><div class="core-photo"><img src="assets/team-ayushbiswas.jpg" alt="Ayush Biswas"></div><h4>Ayush Biswas</h4><span>PHOTO / VIDEO</span></div>
+      <div class="core-card"><div class="core-photo"><img src="assets/team-om.jpg" alt="Om Ubarhande"></div><h4>Om Ubarhande</h4><span>PHOTO / VIDEO</span></div>
+      <div class="core-card"><div class="core-photo"><img src="assets/team-rishav.jpg" alt="Rishav Bhuin"></div><h4>Rishav Bhuin</h4><span>PHOTO / VIDEO</span></div>
+      <div class="core-card"><div class="core-photo"><img src="assets/team-muskan.jpg" alt="Muskan Goyal"></div><h4>Muskan Goyal</h4><span>CHOREOGRAPHY</span></div>
+      <div class="core-card"><div class="core-photo"><img src="assets/team-sanskruti.jpg" alt="Sanskruti N"></div><h4>Sanskruti N</h4><span>CHOREOGRAPHY</span></div>
+      <div class="core-card"><div class="core-photo"><img src="assets/team-teesta.jpg" alt="Teesta Roy"></div><h4>Teesta Roy</h4><span>CHOREOGRAPHY</span></div>
+      <div class="core-card"><div class="core-photo"><img src="assets/team-vishma.jpg" alt="Vishma V"></div><h4>Vishma V</h4><span>CHOREOGRAPHY</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ALUMNI ============ -->
+<section class="section" id="alumni">
+  <div class="wrap">
+    <div class="alumni-box">
+      <h3>This wall is empty for now.</h3>
+      <p>If you danced with Navarasa in an earlier batch, we'd like to know where you ended up. Leave your name and year below — we're building this page properly next.</p>
+      <form class="alumni-form" id="alumniForm">
+        <input type="text" placeholder="Name" id="alName" required>
+        <input type="text" placeholder="Batch year" id="alYear" required>
+        <input type="text" placeholder="What are you up to now?" id="alNow">
+        <button type="submit" class="btn btn-outline">Add yourself</button>
+      </form>
+      <p class="form-note" id="alumniNote" style="display:none; color:var(--acid);">Thanks — this opens an email to the club so we can add you.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ JOIN ============ -->
+<section class="section join" id="join">
+  <div class="wrap">
+    <h2>One step away.</h2>
+    <div class="join-row">
+      <div class="join-info">
+        <p>Scan into our Instagram for updates on every workshop and show, or join the WhatsApp group to hear about rehearsals as they're scheduled. No audition, no experience needed — just show up.</p>
+        <a href="mailto:dance@sac.iiserpune.ac.in" class="btn btn-acid">Email dance@sac.iiserpune.ac.in</a>
+      </div>
+      <div class="qr-row">
+        <div class="qr-card"><div class="box"><img src="assets/qr-instagram.jpg" alt="Instagram QR code for @_navarasa_"></div><span>INSTAGRAM</span></div>
+        <div class="qr-card"><div class="box"><img src="assets/qr-whatsapp.jpg" alt="WhatsApp group QR code"></div><span>WHATSAPP</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a href="#top" class="fbrand"><img src="assets/logo.png" alt=""><span>Navarasa — IISER Pune Dance Club</span></a>
+  <div class="flinks">
+    <a href="https://instagram.com/_navarasa_" target="_blank" rel="noopener">Instagram</a>
+    <a href="mailto:dance@sac.iiserpune.ac.in">Email</a>
+    <a href="#top">Back to top</a>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
