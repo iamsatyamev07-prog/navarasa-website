@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Navarasa — IISER Pune Dance Club</title>
-<meta name="description" content="Navarasa is the dance club of IISER Pune. Workshops, classes, performances and competitions across Kathak, Bollywood and Odissi.">
+<meta name="description" content="Navarasa is the dance club of IISER Pune. Workshops, performances and competitions across Kathak, Bollywood and Odissi.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Permanent+Marker&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -35,7 +35,6 @@
   </div>
   <nav>
     <a href="#movement" class="dl">What we do</a>
-
     <a href="#events" class="dl">Events</a>
     <a href="#gallery" class="dl">Gallery</a>
     <a href="#booking" class="dl">Book the room</a>
@@ -71,7 +70,7 @@
 <!-- ============ MARQUEE — the nine rasas ============ -->
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track" id="marqueeTrack">
-    <span>TEMPEST</span><span class="on">BLOOM</span><span>ECHO</span><span class="on">EMBER</span><span>ABYSS</span><span class="on">MIRAGE</span><span>CHAOS</span><span class="on">ANGER</span><span>ZEN</span><span class="on">CLARITY</span><span>HARMONY</span><span class="on">SPARK</span><span>GLOW</span><span class="on">SURGE</span><span>RHYTHM</span><span class="on">WONDER</span><span>MELANCHOLY</span><span class="on">TRIUMPH</span>
+    <span>SHRINGARA</span><span class="on">LOVE</span><span>HASYA</span><span class="on">LAUGHTER</span><span>KARUNA</span><span class="on">COMPASSION</span><span>RAUDRA</span><span class="on">ANGER</span><span>VEERA</span><span class="on">HEROISM</span><span>BHAYANAKA</span><span class="on">FEAR</span><span>BIBHATSA</span><span class="on">DISGUST</span><span>ADBHUTA</span><span class="on">WONDER</span><span>SHANTA</span><span class="on">PEACE</span>
   </div>
 </div>
 
@@ -91,7 +90,7 @@
       <div class="tile">
         <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="var(--coral)" stroke-width="1.6"><path d="M4 19h16M8 19V9m4 10V5m4 14v-7"/></svg>
         <h3>Classes</h3>
-        <p>External teachers lead regular sessions in Kathak, Bollywood and Odissi — see the styles below.</p>
+        <p>External teachers lead regular sessions in Kathak, Bollywood and Odissi throughout the year.</p>
       </div>
       <div class="tile">
         <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="1.6"><path d="M3 21h18M6 21V10l6-6 6 6v11"/></svg>
@@ -107,68 +106,40 @@
   </div>
 </section>
 
-
-
-<!-- ============ EVENTS ============ -->
+<!-- ============ EVENTS — CALENDAR ============ -->
 <section class="section events-section" id="events">
   <div class="wrap">
     <div class="head-row">
       <h2>What's coming</h2>
-      <p>A mix of confirmed dates, monthly regulars and ideas we're still building. Follow Instagram for exact timings.</p>
+      <p>Tap a marked date to see the poster. Dates below are placeholders until the schedule's locked in.</p>
     </div>
-    <div class="filter-row">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="october">October</button>
-      <button class="filter-btn" data-filter="monthly">Monthly</button>
-      <button class="filter-btn" data-filter="proposed">Proposed</button>
-    </div>
-    <div class="event-grid" id="eventGrid">
-      <div class="event-card" data-cat="october">
-        <div class="stamp">OCT</div>
-        <h3>Garba Night</h3>
-        <p>A full circle of Garba on campus — open to everyone, no steps to learn in advance.</p>
-        <span class="tag status-october">OCTOBER</span>
+
+    <div class="calendar-card">
+      <div class="calendar-head">
+        <div>
+          <span class="eyebrow-pill">● Upcoming</span>
+          <h3 class="calendar-month">October</h3>
+        </div>
+        <img class="calendar-mark" src="assets/logo.png" alt="Navarasa">
       </div>
-      <div class="event-card" data-cat="october">
-        <div class="stamp">OCT</div>
-        <h3>Dance Reels</h3>
-        <p>A reel-making competition — shoot, edit and post your best 30 seconds of movement.</p>
-        <span class="tag status-october">OCTOBER</span>
-      </div>
-      <div class="event-card" data-cat="october">
-        <div class="stamp">OCT</div>
-        <h3>Spotlight: Nrittarang</h3>
-        <p>Our Spotlight series turns the stage over to solo and small-group performances.</p>
-        <span class="tag status-october">OCTOBER</span>
-      </div>
-      <div class="event-card" data-cat="monthly">
-        <div class="stamp">EVERY<br>MONTH</div>
-        <h3>Move &amp; Chill</h3>
-        <p>An informal monthly session — put on a playlist, dance badly, chill properly.</p>
-        <span class="tag status-monthly">MONTHLY</span>
-      </div>
-      <div class="event-card" data-cat="proposed">
-        <div class="stamp">SOON</div>
-        <h3>Dance Battles</h3>
-        <p>One-on-one, freestyle, crowd-judged. Still finding its format — ideas welcome.</p>
-        <span class="tag status-proposed">PROPOSED</span>
-      </div>
-      <div class="event-card" data-cat="proposed">
-        <div class="stamp">SOON</div>
-        <h3>Open-Stage</h3>
-        <p>A no-pressure open floor for anyone who wants five minutes in front of a crowd.</p>
-        <span class="tag status-proposed">PROPOSED</span>
-      </div>
-      <div class="event-card" data-cat="proposed">
-        <div class="stamp">SOON</div>
-        <h3>Intra-IISER Cup</h3>
-        <p>House-vs-house dance competitions, entirely run within campus.</p>
-        <span class="tag status-proposed">PROPOSED</span>
+      <div class="calendar-grid" id="calendarGrid">
+        <span class="cal-dow">S</span><span class="cal-dow">M</span><span class="cal-dow">T</span><span class="cal-dow">W</span><span class="cal-dow">T</span><span class="cal-dow">F</span><span class="cal-dow">S</span>
+        <!-- day cells injected by script.js -->
       </div>
     </div>
-    <p class="events-note">Want the exact date and venue for any of these? <a href="https://instagram.com/_navarasa_" target="_blank" rel="noopener">Check @_navarasa_ on Instagram →</a></p>
+
+    <div class="calendar-legend">
+      <span class="legend-item"><span class="legend-dot cat-october"></span>October event</span>
+      <span class="legend-item"><span class="legend-dot cat-monthly"></span>Monthly regular</span>
+    </div>
+    <p class="events-note">Still finding a date: Dance Battles, Open-Stage and the Intra-IISER Cup. Got an idea for the format? <a href="https://instagram.com/_navarasa_" target="_blank" rel="noopener">Tell us on Instagram →</a></p>
   </div>
 </section>
+
+<div class="poster-modal" id="posterModal">
+  <button class="poster-close" id="posterClose">Close ✕</button>
+  <div class="poster-card" id="posterCard"></div>
+</div>
 
 <!-- ============ GALLERY — 3D CAROUSEL ============ -->
 <section class="section gallery-section" id="gallery">
@@ -186,7 +157,6 @@
           <img src="assets/dancers-stage-1.jpg" alt="Navarasa dancers in costume on stage">
           <span class="slide-label">Navarasa Spotlight</span>
         </div>
-
         <div class="carousel-slide" data-full="assets/performance-stage.jpg">
           <img src="assets/performance-stage.jpg" alt="Contemporary dance on stage">
           <span class="slide-label">Stage Nights</span>
@@ -255,7 +225,7 @@
   </div>
 </section>
 
-<!-- ============ TEAM — POLAROID DARK ARTISTIC ============ -->
+<!-- ============ TEAM — POLAROID, DYNAMIC ============ -->
 <section class="section team-section" id="team">
   <div class="team-bg-decor"></div>
   <div class="wrap">
@@ -264,7 +234,7 @@
       <p>The crew behind every rehearsal, show and late-night choreography session.</p>
     </div>
 
-    <div class="polaroid-grid">
+    <div class="polaroid-grid" id="polaroidGrid">
       <div class="polaroid-card" style="--tilt:-2.5deg">
         <div class="polaroid-frame"><img src="assets/team-krittika.jpg" alt="Krittika Bhattacharya"></div>
         <div class="polaroid-info"><span class="polaroid-name">Krittika Bhattacharya</span><span class="polaroid-role">General Coordinator</span></div>
@@ -348,12 +318,11 @@
     <h2>One step away.</h2>
     <div class="join-row">
       <div class="join-info">
-        <p>Scan into our Instagram for updates on every workshop and show.</p>
+        <p>Scan into our Instagram for updates on every workshop and show. No audition, no experience needed — just show up.</p>
         <a href="mailto:dance@sac.iiserpune.ac.in" class="btn btn-acid">Email dance@sac.iiserpune.ac.in</a>
       </div>
       <div class="qr-row">
         <div class="qr-card"><div class="box"><img src="assets/qr-instagram.jpg" alt="Instagram QR code for @_navarasa_"></div><span>INSTAGRAM</span></div>
-        
       </div>
     </div>
   </div>
