@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gallery — Navarasa</title>
+<meta name="description" content="Photos from Navarasa rehearsals, showcases and performances at IISER Pune.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Permanent+Marker&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<div class="topbar" id="topbar">
+  <a href="index.html" class="brand"><img src="assets/logo.png" alt="Navarasa logo"></a>
+  <div class="nav-cta">
+    <a href="join.html" class="btn btn-acid" style="padding:10px 22px; font-size:13px;">Join us</a>
+    <button class="menu-btn" id="menuOpen" aria-label="Open menu">☰</button>
+  </div>
+</div>
+
+<div class="drawer" id="drawer">
+  <div class="drawer-head">
+    <a href="index.html" class="brand"><img src="assets/logo.png" alt="" style="height:30px"></a>
+    <button class="menu-btn" id="menuClose" aria-label="Close menu" style="border-color:var(--line)">✕</button>
+  </div>
+  <nav>
+    <a href="index.html" class="dl">Home</a>
+    <a href="events.html" class="dl">Events</a>
+    <a href="gallery.html" class="dl active">Gallery</a>
+    <a href="booking.html" class="dl">Book the room</a>
+    <a href="team.html" class="dl">Team</a>
+    <a href="achievements.html" class="dl">Achievements</a>
+    <a href="alumni.html" class="dl">Alumni</a>
+    <a href="join.html" class="dl" style="color:var(--acid)">Join Navarasa</a>
+  </nav>
+</div>
+
+<!-- ============ GALLERY — 3D CAROUSEL ============ -->
+<section class="section gallery-section" id="gallery">
+  <div class="wrap">
+    <div class="head-row">
+      <h2>On stage</h2>
+      <p>Moments from rehearsals, showcases and the nights that make the practice worth it.</p>
+    </div>
+  </div>
+  <div class="stage-carousel-wrap">
+    <button class="carousel-arrow carousel-prev" id="carouselPrev" aria-label="Previous image">‹</button>
+    <div class="stage-carousel" id="stageCarousel">
+      <div class="carousel-track" id="carouselTrack">
+        <div class="carousel-slide" data-full="assets/dancers-stage-1.jpg">
+          <img src="assets/dancers-stage-1.jpg" alt="Navarasa dancers in costume on stage">
+          <span class="slide-label">Navarasa Spotlight</span>
+        </div>
+        <div class="carousel-slide" data-full="assets/performance-stage.jpg">
+          <img src="assets/performance-stage.jpg" alt="Contemporary dance on stage">
+          <span class="slide-label">Stage Nights</span>
+        </div>
+        <div class="carousel-slide" data-full="assets/dancers-group-1.jpg">
+          <img src="assets/dancers-group-1.jpg" alt="Ribbon dance performance">
+          <span class="slide-label">Group Performance</span>
+        </div>
+        <div class="carousel-slide" data-full="assets/dancers-group-2.jpg">
+          <img src="assets/dancers-group-2.jpg" alt="Navarasa team photo after a show">
+          <span class="slide-label">After the Show</span>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-arrow carousel-next" id="carouselNext" aria-label="Next image">›</button>
+  </div>
+  <div class="carousel-dots" id="carouselDots"></div>
+</section>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close">✕</button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+<!-- ============ VIDEOS — SCROLL REEL STRIP ============ -->
+<section class="section videos-section" id="videos">
+  <div class="wrap">
+    <div class="head-row">
+      <h2>Reels</h2>
+      <p>Short clips from rehearsals and shows. Drag or scroll sideways — the one in the middle comes forward.</p>
+    </div>
+  </div>
+  <div class="reel-strip-wrap" id="reelStripWrap">
+    <div class="reel-strip" id="reelStrip">
+      <div class="reel-card" data-title="Garba Night" data-video="">
+        <div class="reel-thumb"><span class="reel-play">▶</span></div>
+        <span class="reel-label">Garba Night</span>
+      </div>
+      <div class="reel-card" data-title="Rehearsal Diaries" data-video="">
+        <div class="reel-thumb"><span class="reel-play">▶</span></div>
+        <span class="reel-label">Rehearsal Diaries</span>
+      </div>
+      <div class="reel-card" data-title="Spotlight Backstage" data-video="">
+        <div class="reel-thumb"><span class="reel-play">▶</span></div>
+        <span class="reel-label">Spotlight Backstage</span>
+      </div>
+      <div class="reel-card" data-title="Move & Chill" data-video="">
+        <div class="reel-thumb"><span class="reel-play">▶</span></div>
+        <span class="reel-label">Move & Chill</span>
+      </div>
+      <div class="reel-card" data-title="Dance Reels Entry" data-video="">
+        <div class="reel-thumb"><span class="reel-play">▶</span></div>
+        <span class="reel-label">Dance Reels Entry</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="video-modal" id="videoModal">
+  <button class="poster-close" id="videoModalClose">Close ✕</button>
+  <div class="video-modal-card" id="videoModalCard"></div>
+</div>
+
+<footer>
+  <a href="index.html" class="fbrand"><img src="assets/logo.png" alt=""><span>Navarasa — IISER Pune Dance Club</span></a>
+  <div class="flinks">
+    <a href="https://instagram.com/_navarasa_" target="_blank" rel="noopener">Instagram</a>
+    <a href="mailto:dance@sac.iiserpune.ac.in">Email</a>
+    <a href="index.html">Home</a>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

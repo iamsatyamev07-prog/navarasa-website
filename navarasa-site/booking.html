@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Book the Room — Navarasa</title>
+<meta name="description" content="Book the Navarasa dance room at IISER Pune for practice or choreography sessions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Permanent+Marker&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<div class="topbar" id="topbar">
+  <a href="index.html" class="brand"><img src="assets/logo.png" alt="Navarasa logo"></a>
+  <div class="nav-cta">
+    <a href="join.html" class="btn btn-acid" style="padding:10px 22px; font-size:13px;">Join us</a>
+    <button class="menu-btn" id="menuOpen" aria-label="Open menu">☰</button>
+  </div>
+</div>
+
+<div class="drawer" id="drawer">
+  <div class="drawer-head">
+    <a href="index.html" class="brand"><img src="assets/logo.png" alt="" style="height:30px"></a>
+    <button class="menu-btn" id="menuClose" aria-label="Close menu" style="border-color:var(--line)">✕</button>
+  </div>
+  <nav>
+    <a href="index.html" class="dl">Home</a>
+    <a href="events.html" class="dl">Events</a>
+    <a href="gallery.html" class="dl">Gallery</a>
+    <a href="booking.html" class="dl active">Book the room</a>
+    <a href="team.html" class="dl">Team</a>
+    <a href="achievements.html" class="dl">Achievements</a>
+    <a href="alumni.html" class="dl">Alumni</a>
+    <a href="join.html" class="dl" style="color:var(--acid)">Join Navarasa</a>
+  </nav>
+</div>
+
+<!-- ============ BOOKING ============ -->
+<section class="section booking" id="booking">
+  <span class="vertical-note">BOOK THE ROOM</span>
+  <div class="wrap">
+    <div class="head-row">
+      <h2>Your new favourite room</h2>
+      <p>The dance room runs on a shared calendar. Tell us when you need it and we'll confirm by email.</p>
+    </div>
+    <div class="booking-wrap">
+      <div>
+        <p style="color:var(--paper-dim); font-size:15px; max-width:400px;">The space is open to every club member for practice, choreography sessions or just messing around with music. Slots are first-come, first-served.</p>
+        <div class="room-facts">
+          <div><span>Location</span><b>H2 Parking-Lot</b></div>
+          <div><span>Booking</span><b>By email, 24–48h ahead</b></div>
+          <div><span>Contact</span><b>dance@sac.iiserpune.ac.in</b></div>
+        </div>
+      </div>
+
+      <form class="form-card" id="bookingForm">
+        <div class="field-row">
+          <div class="field"><label for="bName">Your name</label><input type="text" id="bName" required></div>
+          <div class="field"><label for="bEmail">Email</label><input type="email" id="bEmail" required></div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label for="bDate">Date</label><input type="date" id="bDate" required></div>
+          <div class="field"><label for="bSlot">Time slot</label>
+            <select id="bSlot" required>
+              <option value="">Select a slot</option>
+              <option>7:00 AM – 9:00 AM</option>
+              <option>5:00 PM – 7:00 PM</option>
+              <option>7:00 PM – 9:00 PM</option>
+              <option>9:00 PM – 11:00 PM</option>
+            </select>
+          </div>
+        </div>
+        <div class="field"><label for="bPurpose">What's it for?</label><textarea id="bPurpose" rows="3" placeholder="e.g. Bollywood choreography practice for Spotlight"></textarea></div>
+        <button type="submit" class="btn btn-magenta-outline" style="width:100%;">Request this slot</button>
+        <p class="form-note">This opens your email app with the details filled in, addressed to dance@sac.iiserpune.ac.in — we usually confirm within a day.</p>
+        <div class="confirm-box" id="confirmBox">Your email app should now be open with the request drafted. Send it and we'll get back to you.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a href="index.html" class="fbrand"><img src="assets/logo.png" alt=""><span>Navarasa — IISER Pune Dance Club</span></a>
+  <div class="flinks">
+    <a href="https://instagram.com/_navarasa_" target="_blank" rel="noopener">Instagram</a>
+    <a href="mailto:dance@sac.iiserpune.ac.in">Email</a>
+    <a href="index.html">Home</a>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

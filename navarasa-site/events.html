@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Events — Navarasa</title>
+<meta name="description" content="What Navarasa does and what's coming — workshops, showcases and competitions at IISER Pune.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Permanent+Marker&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<div class="topbar" id="topbar">
+  <a href="index.html" class="brand"><img src="assets/logo.png" alt="Navarasa logo"></a>
+  <div class="nav-cta">
+    <a href="join.html" class="btn btn-acid" style="padding:10px 22px; font-size:13px;">Join us</a>
+    <button class="menu-btn" id="menuOpen" aria-label="Open menu">☰</button>
+  </div>
+</div>
+
+<div class="drawer" id="drawer">
+  <div class="drawer-head">
+    <a href="index.html" class="brand"><img src="assets/logo.png" alt="" style="height:30px"></a>
+    <button class="menu-btn" id="menuClose" aria-label="Close menu" style="border-color:var(--line)">✕</button>
+  </div>
+  <nav>
+    <a href="index.html" class="dl">Home</a>
+    <a href="events.html" class="dl active">Events</a>
+    <a href="gallery.html" class="dl">Gallery</a>
+    <a href="booking.html" class="dl">Book the room</a>
+    <a href="team.html" class="dl">Team</a>
+    <a href="achievements.html" class="dl">Achievements</a>
+    <a href="alumni.html" class="dl">Alumni</a>
+    <a href="join.html" class="dl" style="color:var(--acid)">Join Navarasa</a>
+  </nav>
+</div>
+
+<!-- ============ WHAT WE DO ============ -->
+<section class="section" id="movement">
+  <div class="wrap">
+    <div class="head-row">
+      <h2>What we do</h2>
+      <p>Navarasa takes its name from the nine rasas of Indian aesthetic theory — every rehearsal is really about finding one of them in your body.</p>
+    </div>
+    <div class="tiles">
+      <div class="tile">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="var(--acid)" stroke-width="1.6"><path d="M12 2v6M8 22l4-6 4 6M6 10a6 6 0 0012 0"/></svg>
+        <h3>Workshops</h3>
+        <p>Monthly sessions across different styles. Come curious — no prior dance training required, ever.</p>
+      </div>
+      <div class="tile">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="var(--coral)" stroke-width="1.6"><path d="M4 19h16M8 19V9m4 10V5m4 14v-7"/></svg>
+        <h3>Classes</h3>
+        <p>External teachers lead regular sessions in Kathak, Bollywood and Odissi throughout the year.</p>
+      </div>
+      <div class="tile">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="1.6"><path d="M3 21h18M6 21V10l6-6 6 6v11"/></svg>
+        <h3>Performances</h3>
+        <p>Showcases, Spotlight nights and campus performances — the stage is where the work pays off.</p>
+      </div>
+      <div class="tile">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="var(--violet)" stroke-width="1.6"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+        <h3>Competitions</h3>
+        <p>We compete at IICM, Karavaan and Nupura — and train hard in the weeks before each one.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EVENTS — CALENDAR ============ -->
+<section class="section events-section" id="events">
+  <div class="wrap">
+    <div class="head-row">
+      <h2>What's coming</h2>
+      <p>Tap a marked date to see the poster. Dates below are placeholders until the schedule's locked in.</p>
+    </div>
+
+    <div class="calendar-card">
+      <div class="calendar-head">
+        <div>
+          <span class="eyebrow-pill"><span class="pulse-dot"></span> Upcoming</span>
+          <div class="calendar-month-row">
+            <button class="cal-nav-btn" id="calPrev" aria-label="Previous month">‹</button>
+            <h3 class="calendar-month" id="calendarMonth">October 2026</h3>
+            <button class="cal-nav-btn" id="calNext" aria-label="Next month">›</button>
+          </div>
+        </div>
+        <img class="calendar-mark" src="assets/logo.png" alt="Navarasa">
+      </div>
+      <div class="calendar-grid" id="calendarGrid">
+        <span class="cal-dow">S</span><span class="cal-dow">M</span><span class="cal-dow">T</span><span class="cal-dow">W</span><span class="cal-dow">T</span><span class="cal-dow">F</span><span class="cal-dow">S</span>
+        <!-- day cells injected by script.js -->
+      </div>
+    </div>
+
+    <div class="calendar-legend">
+      <span class="legend-item"><span class="legend-dot cat-october"></span>October event</span>
+      <span class="legend-item"><span class="legend-dot cat-monthly"></span>Monthly regular</span>
+    </div>
+    <p class="events-note">Still finding a date: Dance Battles, Open-Stage and the Intra-IISER Cup. Got an idea for the format? <a href="https://instagram.com/_navarasa_" target="_blank" rel="noopener">Tell us on Instagram →</a></p>
+  </div>
+</section>
+
+<div class="poster-modal" id="posterModal">
+  <button class="poster-close" id="posterClose">Close ✕</button>
+  <div class="poster-card" id="posterCard"></div>
+</div>
+
+<footer>
+  <a href="index.html" class="fbrand"><img src="assets/logo.png" alt=""><span>Navarasa — IISER Pune Dance Club</span></a>
+  <div class="flinks">
+    <a href="https://instagram.com/_navarasa_" target="_blank" rel="noopener">Instagram</a>
+    <a href="mailto:dance@sac.iiserpune.ac.in">Email</a>
+    <a href="index.html">Home</a>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

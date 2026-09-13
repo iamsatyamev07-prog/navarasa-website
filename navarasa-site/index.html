@@ -12,34 +12,35 @@
 </head>
 <body>
 
+<!-- ============ INITIAL LANDING ANIMATION ============ -->
+<div id="introOverlay" aria-hidden="true">
+  <img src="assets/logo.png" alt="">
+  <span class="intro-bar"></span>
+</div>
+
 <!-- ============ NAV ============ -->
 <div class="topbar" id="topbar">
-  <a href="#top" class="brand"><img src="assets/logo.png" alt="Navarasa logo"><span>NAVARASA</span></a>
-  <nav class="nav-links">
-    <a href="#movement">What we do</a>
-    <a href="#events">Events</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#booking">Book the room</a>
-    <a href="#team">Team</a>
-  </nav>
+  <a href="index.html" class="brand"><img src="assets/logo.png" alt="Navarasa logo"></a>
   <div class="nav-cta">
-    <a href="#join" class="btn btn-acid" style="padding:10px 22px; font-size:13px;">Join us</a>
+    <a href="join.html" class="btn btn-acid" style="padding:10px 22px; font-size:13px;">Join us</a>
     <button class="menu-btn" id="menuOpen" aria-label="Open menu">☰</button>
   </div>
 </div>
 
 <div class="drawer" id="drawer">
   <div class="drawer-head">
-    <span class="brand"><img src="assets/logo.png" alt="" style="height:30px"></span>
+    <a href="index.html" class="brand"><img src="assets/logo.png" alt="" style="height:30px"></a>
     <button class="menu-btn" id="menuClose" aria-label="Close menu" style="border-color:var(--line)">✕</button>
   </div>
   <nav>
-    <a href="#movement" class="dl">What we do</a>
-    <a href="#events" class="dl">Events</a>
-    <a href="#gallery" class="dl">Gallery</a>
-    <a href="#booking" class="dl">Book the room</a>
-    <a href="#team" class="dl">Team</a>
-    <a href="#join" class="dl" style="color:var(--acid)">Join Navarasa</a>
+    <a href="index.html" class="dl active">Home</a>
+    <a href="events.html" class="dl">Events</a>
+    <a href="gallery.html" class="dl">Gallery</a>
+    <a href="booking.html" class="dl">Book the room</a>
+    <a href="team.html" class="dl">Team</a>
+    <a href="achievements.html" class="dl">Achievements</a>
+    <a href="alumni.html" class="dl">Alumni</a>
+    <a href="join.html" class="dl" style="color:var(--acid)">Join Navarasa</a>
   </nav>
 </div>
 
@@ -52,288 +53,52 @@
 
   <div class="hero-content">
     <div class="hero-badge">
-      <span class="eyebrow-pill">IISER Pune <b>·</b> Dance Club <b>·</b></span>
+      <span class="eyebrow-pill">IISER Pune <b>·</b> Dance Club</span>
     </div>
-    <h1><span>NAVA</span><span>RASA</span></h1>
+    <h1><span class="hero-wordmark" role="img" aria-label="Navarasa"></span><span class="sr-only">Navarasa</span></h1>
     <span class="brush">nine emotions. one stage.</span>
     <div class="hero-row">
       <p class="hero-sub">We're the dance club at IISER Pune — Kathak, Bollywood and Odissi, workshops that need no experience, and a stage every few months to put it all on.</p>
       <div style="display:flex; gap:14px; flex-wrap:wrap;">
-        <a href="#join" class="btn btn-acid">Join Navarasa</a>
-        <a href="#gallery" class="btn btn-outline">Watch us move</a>
+        <a href="join.html" class="btn btn-acid">Join Navarasa</a>
+        <a href="gallery.html" class="btn btn-outline">Watch us move</a>
       </div>
     </div>
   </div>
   <div class="scroll-cue"><span>SCROLL</span><span class="line"></span></div>
 </header>
 
-<!-- ============ MARQUEE — the nine rasas ============ -->
-<div class="marquee" aria-hidden="true">
-  <div class="marquee-track" id="marqueeTrack">
-    <span>SHRINGARA</span><span class="on">LOVE</span><span>HASYA</span><span class="on">LAUGHTER</span><span>KARUNA</span><span class="on">COMPASSION</span><span>RAUDRA</span><span class="on">ANGER</span><span>VEERA</span><span class="on">HEROISM</span><span>BHAYANAKA</span><span class="on">FEAR</span><span>BIBHATSA</span><span class="on">DISGUST</span><span>ADBHUTA</span><span class="on">WONDER</span><span>SHANTA</span><span class="on">PEACE</span>
-  </div>
-</div>
-
-<!-- ============ WHAT WE DO ============ -->
-<section class="section" id="movement">
+<!-- ============ ABOUT — 3D TILT CARD ============ -->
+<section class="section about-section" id="about">
   <div class="wrap">
-    <div class="head-row">
-      <h2>What we do</h2>
-      <p>Navarasa takes its name from the nine rasas of Indian aesthetic theory — every rehearsal is really about finding one of them in your body.</p>
-    </div>
-    <div class="tiles">
-      <div class="tile">
-        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="var(--acid)" stroke-width="1.6"><path d="M12 2v6M8 22l4-6 4 6M6 10a6 6 0 0012 0"/></svg>
-        <h3>Workshops</h3>
-        <p>Monthly sessions across different styles. Come curious — no prior dance training required, ever.</p>
-      </div>
-      <div class="tile">
-        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="var(--coral)" stroke-width="1.6"><path d="M4 19h16M8 19V9m4 10V5m4 14v-7"/></svg>
-        <h3>Classes</h3>
-        <p>External teachers lead regular sessions in Kathak, Bollywood and Odissi throughout the year.</p>
-      </div>
-      <div class="tile">
-        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="1.6"><path d="M3 21h18M6 21V10l6-6 6 6v11"/></svg>
-        <h3>Performances</h3>
-        <p>Showcases, Spotlight nights and campus performances — the stage is where the work pays off.</p>
-      </div>
-      <div class="tile">
-        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="var(--violet)" stroke-width="1.6"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
-        <h3>Competitions</h3>
-        <p>We compete at IICM, Karavaan and Nupura — and train hard in the weeks before each one.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ EVENTS — CALENDAR ============ -->
-<section class="section events-section" id="events">
-  <div class="wrap">
-    <div class="head-row">
-      <h2>What's coming</h2>
-      <p>Tap a marked date to see the poster. Dates below are placeholders until the schedule's locked in.</p>
-    </div>
-
-    <div class="calendar-card">
-      <div class="calendar-head">
-        <div>
-          <span class="eyebrow-pill">● Upcoming</span>
-          <h3 class="calendar-month">October</h3>
+    <div class="about-layout">
+      <div class="about-copy">
+        <div class="head-row" style="border-bottom:none; margin-bottom:26px; padding-bottom:0;">
+          <h2>About Navarasa</h2>
         </div>
-        <img class="calendar-mark" src="assets/logo.png" alt="Navarasa">
+        <p>Navarasa is the dance club of IISER Pune — started as a place for students to move, whatever their background or experience. We take our name from the nine rasas of Indian aesthetic theory, because that's really what a rehearsal is about: finding one of those nine emotions in your body and putting it on stage.</p>
+        <p>No auditions, no experience required — just a willingness to show up, learn, and put in the work before the next stage.</p>
       </div>
-      <div class="calendar-grid" id="calendarGrid">
-        <span class="cal-dow">S</span><span class="cal-dow">M</span><span class="cal-dow">T</span><span class="cal-dow">W</span><span class="cal-dow">T</span><span class="cal-dow">F</span><span class="cal-dow">S</span>
-        <!-- day cells injected by script.js -->
-      </div>
-    </div>
-
-    <div class="calendar-legend">
-      <span class="legend-item"><span class="legend-dot cat-october"></span>October event</span>
-      <span class="legend-item"><span class="legend-dot cat-monthly"></span>Monthly regular</span>
-    </div>
-    <p class="events-note">Still finding a date: Dance Battles, Open-Stage and the Intra-IISER Cup. Got an idea for the format? <a href="https://instagram.com/_navarasa_" target="_blank" rel="noopener">Tell us on Instagram →</a></p>
-  </div>
-</section>
-
-<div class="poster-modal" id="posterModal">
-  <button class="poster-close" id="posterClose">Close ✕</button>
-  <div class="poster-card" id="posterCard"></div>
-</div>
-
-<!-- ============ GALLERY — 3D CAROUSEL ============ -->
-<section class="section gallery-section" id="gallery">
-  <div class="wrap">
-    <div class="head-row">
-      <h2>On stage</h2>
-      <p>Moments from rehearsals, showcases and the nights that make the practice worth it.</p>
-    </div>
-  </div>
-  <div class="stage-carousel-wrap">
-    <button class="carousel-arrow carousel-prev" id="carouselPrev" aria-label="Previous image">‹</button>
-    <div class="stage-carousel" id="stageCarousel">
-      <div class="carousel-track" id="carouselTrack">
-        <div class="carousel-slide" data-full="assets/dancers-stage-1.jpg">
-          <img src="assets/dancers-stage-1.jpg" alt="Navarasa dancers in costume on stage">
-          <span class="slide-label">Navarasa Spotlight</span>
-        </div>
-        <div class="carousel-slide" data-full="assets/performance-stage.jpg">
-          <img src="assets/performance-stage.jpg" alt="Contemporary dance on stage">
-          <span class="slide-label">Stage Nights</span>
-        </div>
-        <div class="carousel-slide" data-full="assets/dancers-group-1.jpg">
-          <img src="assets/dancers-group-1.jpg" alt="Ribbon dance performance">
-          <span class="slide-label">Group Performance</span>
-        </div>
-        <div class="carousel-slide" data-full="assets/dancers-group-2.jpg">
-          <img src="assets/dancers-group-2.jpg" alt="Navarasa team photo after a show">
-          <span class="slide-label">After the Show</span>
-        </div>
-      </div>
-    </div>
-    <button class="carousel-arrow carousel-next" id="carouselNext" aria-label="Next image">›</button>
-  </div>
-  <div class="carousel-dots" id="carouselDots"></div>
-</section>
-
-<div class="lightbox" id="lightbox">
-  <button class="lightbox-close" id="lightboxClose" aria-label="Close">✕</button>
-  <img id="lightboxImg" src="" alt="">
-</div>
-
-<!-- ============ BOOKING ============ -->
-<section class="section booking" id="booking">
-  <span class="vertical-note">BOOK THE ROOM</span>
-  <div class="wrap">
-    <div class="head-row">
-      <h2>Your new favourite room</h2>
-      <p>The dance room runs on a shared calendar. Tell us when you need it and we'll confirm by email.</p>
-    </div>
-    <div class="booking-wrap">
-      <div>
-        <p style="color:var(--paper-dim); font-size:15px; max-width:400px;">The space is open to every club member for practice, choreography sessions or just messing around with music. Slots are first-come, first-served.</p>
-        <div class="room-facts">
-          <div><span>Location</span><b>H2 Parking-Lot</b></div>
-          <div><span>Booking</span><b>By email, 24–48h ahead</b></div>
-          <div><span>Contact</span><b>dance@sac.iiserpune.ac.in</b></div>
-        </div>
-      </div>
-
-      <form class="form-card" id="bookingForm">
-        <div class="field-row">
-          <div class="field"><label for="bName">Your name</label><input type="text" id="bName" required></div>
-          <div class="field"><label for="bEmail">Email</label><input type="email" id="bEmail" required></div>
-        </div>
-        <div class="field-row">
-          <div class="field"><label for="bDate">Date</label><input type="date" id="bDate" required></div>
-          <div class="field"><label for="bSlot">Time slot</label>
-            <select id="bSlot" required>
-              <option value="">Select a slot</option>
-              <option>7:00 AM – 9:00 AM</option>
-              <option>5:00 PM – 7:00 PM</option>
-              <option>7:00 PM – 9:00 PM</option>
-              <option>9:00 PM – 11:00 PM</option>
-            </select>
+      <div class="about-tilt-wrap" id="aboutTiltWrap">
+        <div class="about-card" id="aboutCard">
+          <div class="about-card-bg"><img src="assets/dancers-stage-1.jpg" alt="Navarasa performing on stage"></div>
+          <span class="about-card-badge">est. 2026</span>
+          <div class="about-card-caption">
+            <span class="brush">nine emotions.</span>
+            <h3>one stage.</h3>
           </div>
         </div>
-        <div class="field"><label for="bPurpose">What's it for?</label><textarea id="bPurpose" rows="3" placeholder="e.g. Bollywood choreography practice for Spotlight"></textarea></div>
-        <button type="submit" class="btn btn-magenta-outline" style="width:100%;">Request this slot</button>
-        <p class="form-note">This opens your email app with the details filled in, addressed to dance@sac.iiserpune.ac.in — we usually confirm within a day.</p>
-        <div class="confirm-box" id="confirmBox">Your email app should now be open with the request drafted. Send it and we'll get back to you.</div>
-      </form>
-    </div>
-  </div>
-</section>
-
-<!-- ============ TEAM — POLAROID, DYNAMIC ============ -->
-<section class="section team-section" id="team">
-  <div class="team-bg-decor"></div>
-  <div class="wrap">
-    <div class="head-row">
-      <h2>The people who move it</h2>
-      <p>The crew behind every rehearsal, show and late-night choreography session.</p>
-    </div>
-
-    <div class="polaroid-grid" id="polaroidGrid">
-      <div class="polaroid-card" style="--tilt:-2.5deg">
-        <div class="polaroid-frame"><img src="assets/team-krittika.jpg" alt="Krittika Bhattacharya"></div>
-        <div class="polaroid-info"><span class="polaroid-name">Krittika Bhattacharya</span><span class="polaroid-role">General Coordinator</span></div>
-      </div>
-      <div class="polaroid-card" style="--tilt:1.8deg">
-        <div class="polaroid-frame"><img src="assets/team-pratyush.jpg" alt="Pratyush Sahu"></div>
-        <div class="polaroid-info"><span class="polaroid-name">Pratyush Sahu</span><span class="polaroid-role">General Coordinator</span></div>
-      </div>
-      <div class="polaroid-card" style="--tilt:-1.2deg">
-        <div class="polaroid-frame"><img src="assets/team-arkadeep.jpg" alt="Arkadeep Dey"></div>
-        <div class="polaroid-info"><span class="polaroid-name">Arkadeep Dey</span><span class="polaroid-role">General Coordinator</span></div>
-      </div>
-      <div class="polaroid-card" style="--tilt:2.2deg">
-        <div class="polaroid-frame"><img src="assets/team-rashi.jpg" alt="Rashi Sangoi"></div>
-        <div class="polaroid-info"><span class="polaroid-name">Rashi Sangoi</span><span class="polaroid-role">Logistics</span></div>
-      </div>
-      <div class="polaroid-card" style="--tilt:-3deg">
-        <div class="polaroid-frame"><img src="assets/team-satyamev.jpg" alt="Satyamev Aman"></div>
-        <div class="polaroid-info"><span class="polaroid-name">Satyamev Aman</span><span class="polaroid-role">Social Media</span></div>
-      </div>
-      <div class="polaroid-card" style="--tilt:1.5deg">
-        <div class="polaroid-frame"><img src="assets/team-naityik.jpg" alt="Naityik Singh"></div>
-        <div class="polaroid-info"><span class="polaroid-name">Naityik Singh</span><span class="polaroid-role">Design</span></div>
-      </div>
-      <div class="polaroid-card" style="--tilt:-1.8deg">
-        <div class="polaroid-frame"><img src="assets/team-ayushb.jpg" alt="Ayush Bhushan"></div>
-        <div class="polaroid-info"><span class="polaroid-name">Ayush Bhushan</span><span class="polaroid-role">Music Editing</span></div>
-      </div>
-      <div class="polaroid-card" style="--tilt:2.8deg">
-        <div class="polaroid-frame"><img src="assets/team-ayushbiswas.jpg" alt="Ayush Biswas"></div>
-        <div class="polaroid-info"><span class="polaroid-name">Ayush Biswas</span><span class="polaroid-role">Photo / Video</span></div>
-      </div>
-      <div class="polaroid-card" style="--tilt:-2deg">
-        <div class="polaroid-frame"><img src="assets/team-om.jpg" alt="Om Ubarhande"></div>
-        <div class="polaroid-info"><span class="polaroid-name">Om Ubarhande</span><span class="polaroid-role">Photo / Video</span></div>
-      </div>
-      <div class="polaroid-card" style="--tilt:1.2deg">
-        <div class="polaroid-frame"><img src="assets/team-rishav.jpg" alt="Rishav Bhuin"></div>
-        <div class="polaroid-info"><span class="polaroid-name">Rishav Bhuin</span><span class="polaroid-role">Photo / Video</span></div>
-      </div>
-      <div class="polaroid-card" style="--tilt:-1.5deg">
-        <div class="polaroid-frame"><img src="assets/team-muskan.jpg" alt="Muskan Goyal"></div>
-        <div class="polaroid-info"><span class="polaroid-name">Muskan Goyal</span><span class="polaroid-role">Choreography</span></div>
-      </div>
-      <div class="polaroid-card" style="--tilt:2deg">
-        <div class="polaroid-frame"><img src="assets/team-sanskruti.jpg" alt="Sanskruti N"></div>
-        <div class="polaroid-info"><span class="polaroid-name">Sanskruti N</span><span class="polaroid-role">Choreography</span></div>
-      </div>
-      <div class="polaroid-card" style="--tilt:-2.8deg">
-        <div class="polaroid-frame"><img src="assets/team-teesta.jpg" alt="Teesta Roy"></div>
-        <div class="polaroid-info"><span class="polaroid-name">Teesta Roy</span><span class="polaroid-role">Choreography</span></div>
-      </div>
-      <div class="polaroid-card" style="--tilt:1deg">
-        <div class="polaroid-frame"><img src="assets/team-vishma.jpg" alt="Vishma V"></div>
-        <div class="polaroid-info"><span class="polaroid-name">Vishma V</span><span class="polaroid-role">Choreography</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ ALUMNI ============ -->
-<section class="section" id="alumni">
-  <div class="wrap">
-    <div class="alumni-box">
-      <h3>This wall is empty for now.</h3>
-      <p>If you danced with Navarasa in an earlier batch, we'd like to know where you ended up. Leave your name and year below — we're building this page properly next.</p>
-      <form class="alumni-form" id="alumniForm">
-        <input type="text" placeholder="Name" id="alName" required>
-        <input type="text" placeholder="Batch year" id="alYear" required>
-        <input type="text" placeholder="What are you up to now?" id="alNow">
-        <button type="submit" class="btn btn-outline">Add yourself</button>
-      </form>
-      <p class="form-note" id="alumniNote" style="display:none; color:var(--acid);">Thanks — this opens an email to the club so we can add you.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ============ JOIN ============ -->
-<section class="section join" id="join">
-  <div class="wrap">
-    <h2>One step away.</h2>
-    <div class="join-row">
-      <div class="join-info">
-        <p>Scan into our Instagram for updates on every workshop and show. No audition, no experience needed — just show up.</p>
-        <a href="mailto:dance@sac.iiserpune.ac.in" class="btn btn-acid">Email dance@sac.iiserpune.ac.in</a>
-      </div>
-      <div class="qr-row">
-        <div class="qr-card"><div class="box"><img src="assets/qr-instagram.jpg" alt="Instagram QR code for @_navarasa_"></div><span>INSTAGRAM</span></div>
       </div>
     </div>
   </div>
 </section>
 
 <footer>
-  <a href="#top" class="fbrand"><img src="assets/logo.png" alt=""><span>Navarasa — IISER Pune Dance Club</span></a>
+  <a href="index.html" class="fbrand"><img src="assets/logo.png" alt=""><span>Navarasa — IISER Pune Dance Club</span></a>
   <div class="flinks">
     <a href="https://instagram.com/_navarasa_" target="_blank" rel="noopener">Instagram</a>
     <a href="mailto:dance@sac.iiserpune.ac.in">Email</a>
-    <a href="#top">Back to top</a>
+    <a href="index.html">Home</a>
   </div>
 </footer>
 
