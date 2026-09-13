@@ -24,7 +24,7 @@
 @media (max-width:640px){ :root{ --edge: 22px; } }
 
 *{ box-sizing:border-box; }
-html{ scroll-behavior:smooth; }
+html{ scroll-behavior:smooth; overflow-x:hidden; }
 body{
   margin:0;
   background:var(--ink);
@@ -32,6 +32,8 @@ body{
   font-family:var(--sans);
   line-height:1.5;
   -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+  width:100%;
 }
 img{ max-width:100%; display:block; }
 a{ color:inherit; text-decoration:none; }
@@ -250,26 +252,6 @@ button{ font:inherit; color:inherit; cursor:pointer; }
   transform:translateZ(-30px) scale(1.12);
 }
 .about-card-bg img{ width:100%; height:100%; object-fit:cover; filter:saturate(1.05); }
-.about-card-bg::after{
-  content:""; position:absolute; inset:0;
-  background:linear-gradient(180deg, rgba(12,12,17,0) 0%, rgba(12,12,17,.1) 55%, rgba(12,12,17,.82) 100%);
-}
-.about-card-caption{
-  position:absolute; left:0; right:0; bottom:0; padding:28px;
-  transform:translateZ(10px);
-}
-.about-card-caption .brush{
-  font-family:var(--brush); color:var(--acid); font-size:22px; transform:rotate(-2deg);
-  display:block; margin-bottom:8px; text-shadow:0 2px 14px rgba(0,0,0,.7);
-}
-.about-card-caption h3{ font-size:24px; color:var(--paper); text-shadow:0 2px 14px rgba(0,0,0,.7); }
-.about-card-badge{
-  position:absolute; top:26px; right:26px;
-  transform:translateZ(60px);
-  background:var(--acid); color:#0c0c11; font-family:var(--display); font-weight:800;
-  font-size:13px; padding:10px 16px; border-radius:999px;
-  box-shadow:0 15px 30px rgba(0,0,0,.5);
-}
 @media (max-width:640px){
   .about-card{ max-width:320px; }
 }
@@ -300,11 +282,19 @@ button{ font:inherit; color:inherit; cursor:pointer; }
   transition:box-shadow .3s ease, border-color .3s ease;
 }
 @media (max-width:640px){ .calendar-card{ padding:22px 16px; border-radius:20px; } }
-.calendar-head{ display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:30px; gap:16px; }
+.calendar-head{ display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:30px; gap:16px; flex-wrap:wrap; }
 .calendar-head .eyebrow-pill{ margin-bottom:10px; }
 .calendar-month-row{ display:flex; align-items:center; gap:14px; }
 .calendar-month{ font-size:clamp(30px,5vw,46px); min-width:13ch; }
-.calendar-mark{ height:26px; width:auto; opacity:.75; }
+.calendar-mark{ height:26px; width:auto; opacity:.75; flex:none; }
+@media (max-width:640px){
+  .calendar-month{ font-size:26px; min-width:0; }
+  .calendar-mark{ height:20px; }
+  .calendar-month-row{ gap:10px; }
+}
+@media (max-width:400px){
+  .calendar-month{ font-size:22px; }
+}
 
 .cal-nav-btn{
   width:38px; height:38px; border-radius:50%; flex:none;
