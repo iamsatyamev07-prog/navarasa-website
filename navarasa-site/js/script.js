@@ -143,6 +143,7 @@ if (calendarGrid){
       const key = `${calYear}-${calMonthIndex + 1}-${day}`;
       const cell = document.createElement('div');
       const ev = calendarEvents[key];
+      cell.style.setProperty('--d', day); // drives the cascade-in delay
       if (ev){
         cell.className = 'cal-day marked';
         cell.innerHTML = `
@@ -263,13 +264,13 @@ if (carouselTrack){
 }
 
 
-// ============ VIDEOS — SCROLL REEL STRIP (gallery.html only) ============
-// Deliberately scroll-driven (continuous) rather than click-driven like the
-// photo carousel above, so it reads as a different kind of interaction.
+// ============ VIDEOS — SCROLL REEL STRIP ============
 const reelStripWrap = document.getElementById('reelStripWrap');
 
 if (reelStripWrap){
   const reelCards = Array.from(reelStripWrap.querySelectorAll('.reel-card'));
+  const reelPrevBtn = document.getElementById('reelPrev');
+  const reelNextBtn = document.getElementById('reelNext');
 
   function updateCenterReel(){
     const wrapRect = reelStripWrap.getBoundingClientRect();
@@ -295,6 +296,47 @@ if (reelStripWrap){
   window.addEventListener('resize', updateCenterReel);
   updateCenterReel();
 
+  // Desktop Arrow Navigation Controls
+  if (reelPrevBtn) {
+    reelPrevBtn.addEventListener('click', () => {
+      reelStripWrap.scrollBy({ left: -240, behavior: 'smooth' });
+    });
+  }
+  if (reelNextBtn) {
+    reelNextBtn.addEventListener('click', () => {
+      reelStripWrap.scrollBy({ left: 240, behavior: 'smooth' });
+    });
+  }
+
+  // Desktop Cursor Click & Drag Moving Equipment
+  let isDragging = false;
+  let startX, scrollLeftPos;
+  let hasDragged = false;
+
+  reelStripWrap.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    hasDragged = false;
+    reelStripWrap.classList.add('grabbing');
+    startX = e.pageX - reelStripWrap.offsetLeft;
+    scrollLeftPos = reelStripWrap.scrollLeft;
+  });
+  reelStripWrap.addEventListener('mouseleave', () => {
+    isDragging = false;
+    reelStripWrap.classList.remove('grabbing');
+  });
+  reelStripWrap.addEventListener('mouseup', () => {
+    isDragging = false;
+    reelStripWrap.classList.remove('grabbing');
+  });
+  reelStripWrap.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.pageX - reelStripWrap.offsetLeft;
+    const walk = (x - startX) * 1.6;
+    if (Math.abs(walk) > 5) hasDragged = true;
+    reelStripWrap.scrollLeft = scrollLeftPos - walk;
+  });
+
   const videoModal = document.getElementById('videoModal');
   const videoModalCard = document.getElementById('videoModalCard');
 
@@ -312,7 +354,10 @@ if (reelStripWrap){
     videoModal.classList.add('open');
   }
   reelCards.forEach(card => {
-    card.addEventListener('click', () => openVideoModal(card.dataset.title, card.dataset.video));
+    card.addEventListener('click', (e) => {
+      if (hasDragged) return; // ignore click if mouse was dragging
+      openVideoModal(card.dataset.title, card.dataset.video);
+    });
   });
   const videoModalCloseBtn = document.getElementById('videoModalClose');
   if (videoModalCloseBtn) videoModalCloseBtn.addEventListener('click', () => videoModal.classList.remove('open'));
@@ -321,6 +366,46 @@ if (reelStripWrap){
     document.addEventListener('keydown', e => { if (e.key === 'Escape') videoModal.classList.remove('open'); });
   }
 }
+
+// ============ SCROLL SPY FOR SINGLE PAGE NAV ============
+(function(){
+  const sections = document.querySelectorAll('section[id], header[id]');
+  const desktopLinks = document.querySelectorAll('.nav-links a');
+  const drawerLinks = document.querySelectorAll('.drawer nav a');
+
+  function highlightNav(){
+    let current = 'top';
+    const scrollPos = window.scrollY + 200;
+    sections.forEach(sec => {
+      const top = sec.offsetTop;
+      const height = sec.offsetHeight;
+      if (scrollPos >= top && scrollPos < top + height){
+        current = sec.getAttribute('id');
+      }
+    });
+
+    desktopLinks.forEach(a => {
+      const href = a.getAttribute('href');
+      if (href === `#${current}` || (href === 'index.html' && current === 'top')){
+        a.classList.add('active');
+      } else {
+        a.classList.remove('active');
+      }
+    });
+
+    drawerLinks.forEach(a => {
+      const href = a.getAttribute('href');
+      if (href === `#${current}` || (href === 'index.html' && current === 'top')){
+        a.classList.add('active');
+      } else {
+        a.classList.remove('active');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', highlightNav);
+  highlightNav();
+})();
 
 
 // ============ TEAM — DYNAMIC REVEAL + IDLE FLOAT (team.html only) ============
@@ -381,3 +466,127 @@ if (alumniForm){
     document.getElementById('alumniNote').style.display = 'block';
   });
 }
+
+// ============ DYNAMIC HEADING SCROLL REVEAL ============
+(function(){
+  const headings = document.querySelectorAll('.head-row h2, .section h2');
+  if (headings.length){
+    if ('IntersectionObserver' in window){
+      const headingObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting){
+            entry.target.classList.add('heading-in-view');
+          }
+        });
+      }, { threshold: 0.15 });
+      headings.forEach(h => headingObserver.observe(h));
+    } else {
+      headings.forEach(h => h.classList.add('heading-in-view'));
+    }
+  }
+})();
+
+
+// ============ PER-SECTION DYNAMIC EFFECTS ============
+// Each section from "What we do" to "Previous members" has its own signature motion (see css/style.css).
+(function(){
+  document.documentElement.classList.add('fx');
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const rand = (a, b) => a + Math.random() * (b - a);
+
+  // --- scroll trigger: adds .sec-in when a section enters the viewport ---
+  const ids = ['movement','events','gallery','videos','booking','team','achievements','alumni'];
+  const sections = ids.map(id => document.getElementById(id)).filter(Boolean);
+  if ('IntersectionObserver' in window){
+    const secObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting){
+          entry.target.classList.add('sec-in');
+          secObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -6% 0px' });
+    sections.forEach(sec => secObserver.observe(sec));
+  } else {
+    sections.forEach(sec => sec.classList.add('sec-in'));
+  }
+
+  // --- 1. What we do: cursor spotlight + icon stroke-draw ---
+  document.querySelectorAll('#movement .tile').forEach(tile => {
+    tile.querySelectorAll('.ic path').forEach(path => path.setAttribute('pathLength', '1'));
+    tile.addEventListener('mousemove', (e) => {
+      const r = tile.getBoundingClientRect();
+      tile.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      tile.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    });
+  });
+
+  // --- 5. Book the room: music-visualiser bars behind the section ---
+  const booking = document.getElementById('booking');
+  if (booking){
+    const eq = document.createElement('div');
+    eq.className = 'eq-bars';
+    eq.setAttribute('aria-hidden', 'true');
+    const barCount = window.innerWidth < 640 ? 18 : 34;
+    for (let i = 0; i < barCount; i++){
+      const bar = document.createElement('i');
+      bar.style.setProperty('--h', rand(0.35, 1).toFixed(2));
+      bar.style.setProperty('--t', rand(0.7, 1.7).toFixed(2) + 's');
+      bar.style.setProperty('--d', (-rand(0, 2)).toFixed(2) + 's');
+      eq.appendChild(bar);
+    }
+    booking.appendChild(eq);
+  }
+
+  // --- 6. Team: camera-flash stagger + cursor-driven 3D tilt with glare ---
+  document.querySelectorAll('.polaroid-card').forEach((card, i) => {
+    card.style.setProperty('--flash-delay', (0.35 + (i % 8) * 0.06) + 's');
+    if (reduced) return;
+    card.addEventListener('mousemove', (e) => {
+      const r = card.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width;
+      const y = (e.clientY - r.top) / r.height;
+      card.style.setProperty('--ry', ((x - 0.5) * 14).toFixed(2) + 'deg');
+      card.style.setProperty('--rx', ((0.5 - y) * 12).toFixed(2) + 'deg');
+      card.style.setProperty('--gx', (x * 100).toFixed(1) + '%');
+      card.style.setProperty('--gy', (y * 100).toFixed(1) + '%');
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.setProperty('--rx', '0deg');
+      card.style.setProperty('--ry', '0deg');
+    });
+  });
+
+  // --- 7. Achievements: rising gold sparkles ---
+  const achBox = document.querySelector('#achievements .alumni-box');
+  if (achBox){
+    const layer = document.createElement('div');
+    layer.className = 'fx-layer';
+    layer.setAttribute('aria-hidden', 'true');
+    for (let i = 0; i < 20; i++){
+      const sp = document.createElement('span');
+      sp.className = 'sparkle';
+      sp.style.setProperty('--x', rand(3, 96).toFixed(1) + '%');
+      sp.style.setProperty('--s', rand(10, 20).toFixed(1) + 'px');
+      sp.style.setProperty('--t', rand(5, 9).toFixed(1) + 's');
+      sp.style.setProperty('--d', (-rand(0, 9)).toFixed(1) + 's');
+      layer.appendChild(sp);
+    }
+    achBox.prepend(layer);
+  }
+
+  // --- 8. Previous members: echo rings rippling outward ---
+  const alBox = document.querySelector('#alumni .alumni-box');
+  if (alBox){
+    const layer = document.createElement('div');
+    layer.className = 'fx-layer';
+    layer.setAttribute('aria-hidden', 'true');
+    for (let i = 0; i < 3; i++){
+      const ring = document.createElement('span');
+      ring.className = 'echo-ring';
+      ring.style.setProperty('--d', (-i * 2.5) + 's');
+      layer.appendChild(ring);
+    }
+    alBox.prepend(layer);
+  }
+})();
