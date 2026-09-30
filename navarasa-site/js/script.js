@@ -296,17 +296,27 @@ if (reelStripWrap){
   window.addEventListener('resize', updateCenterReel);
   updateCenterReel();
 
-  // Desktop Arrow Navigation Controls
-  if (reelPrevBtn) {
-    reelPrevBtn.addEventListener('click', () => {
-      reelStripWrap.scrollBy({ left: -240, behavior: 'smooth' });
-    });
+  // Arrow navigation — steps to the previous/next reel (wraps around).
+  // If the strip overflows it scrolls the target card to the middle; if all
+  // cards already fit on screen (e.g. only a few reels on desktop) there is
+  // nothing to scroll, so the highlighted "centre" card simply moves.
+  function currentReelIndex(){
+    const i = reelCards.findIndex(c => c.classList.contains('is-center'));
+    return i < 0 ? 0 : i;
   }
-  if (reelNextBtn) {
-    reelNextBtn.addEventListener('click', () => {
-      reelStripWrap.scrollBy({ left: 240, behavior: 'smooth' });
-    });
+  function goToReel(i){
+    const n = reelCards.length;
+    if (!n) return;
+    i = (i + n) % n;
+    const card = reelCards[i];
+    if (reelStripWrap.scrollWidth > reelStripWrap.clientWidth + 1){
+      const target = card.offsetLeft - (reelStripWrap.clientWidth - card.offsetWidth) / 2;
+      reelStripWrap.scrollTo({ left: target, behavior: 'smooth' });
+    }
+    reelCards.forEach(c => c.classList.toggle('is-center', c === card));
   }
+  if (reelPrevBtn) reelPrevBtn.addEventListener('click', () => goToReel(currentReelIndex() - 1));
+  if (reelNextBtn) reelNextBtn.addEventListener('click', () => goToReel(currentReelIndex() + 1));
 
   // Desktop Cursor Click & Drag Moving Equipment
   let isDragging = false;
@@ -360,10 +370,11 @@ if (reelStripWrap){
     });
   });
   const videoModalCloseBtn = document.getElementById('videoModalClose');
-  if (videoModalCloseBtn) videoModalCloseBtn.addEventListener('click', () => videoModal.classList.remove('open'));
+  const closeVideoModal = () => { videoModal.classList.remove('open'); videoModalCard.innerHTML = ''; };
+  if (videoModalCloseBtn) videoModalCloseBtn.addEventListener('click', closeVideoModal);
   if (videoModal){
-    videoModal.addEventListener('click', e => { if (e.target === videoModal) videoModal.classList.remove('open'); });
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') videoModal.classList.remove('open'); });
+    videoModal.addEventListener('click', e => { if (e.target === videoModal) closeVideoModal(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeVideoModal(); });
   }
 }
 

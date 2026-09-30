@@ -73,8 +73,8 @@ no external file for the browser to block.)
 ## Editing notes
 
 - **Colours, fonts, spacing** — all defined as CSS variables at the top of
-  `css/style.css` under `:root` (e.g. `--acid`, `--magenta`, `--violet`,
-  `--gold`). Change a value there to restyle the whole site.
+  `css/style.css` under `:root` (e.g. `--acid`, `--magenta`, `--violet`; now set to the Orientation 2026-27 presentation palette: deep red, crimson, terracotta, gold, ivory, black,
+  wine). Change a value there to restyle the whole site.
 
 - **Landing animation** — on first load, `#introOverlay` (only in
   `index.html`, the home page) shows the logo for a beat before fading into
