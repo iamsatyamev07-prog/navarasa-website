@@ -73,12 +73,22 @@ if (aboutCard && aboutTiltWrap){
 const calendarGrid = document.getElementById('calendarGrid');
 
 if (calendarGrid){
+  const NR = 'Nrittarang — Dance Week';
   const calendarEvents = {
-    '2026-10-3':  { title: 'Move & Chill',          cat: 'monthly', tag: 'MONTHLY', date: 'Sat, Oct 3',  poster: null },
-    '2026-10-10': { title: 'Garba Night',           cat: 'october', tag: 'OCTOBER', date: 'Sat, Oct 10', poster: null },
-    '2026-10-17': { title: 'Dance Reels',           cat: 'october', tag: 'OCTOBER', date: 'Sat, Oct 17', poster: null },
-    '2026-10-24': { title: 'Spotlight: Nrittarang', cat: 'october', tag: 'OCTOBER', date: 'Sat, Oct 24', poster: null }
+    '2026-10-3':  [{ title: 'Move & Chill', cat: 'monthly', tag: 'MONTHLY', date: 'Sat, Oct 3', poster: null }],
+    '2026-10-6':  [{ title: 'Navarasa × Art Club Iristique', cat: 'nrittarang', tag: NR, date: 'Tue, Oct 6', time: '9 pm onwards', location: 'Art Room', poster: null }],
+    '2026-10-7':  [{ title: 'Garba Workshop', cat: 'nrittarang', tag: NR, date: 'Wed, Oct 7', location: 'Dance Room', poster: null }],
+    '2026-10-8':  [{ title: 'Movie Night', cat: 'nrittarang', tag: NR, date: 'Thu, Oct 8', time: '9 pm onwards', location: 'LHC', poster: null }],
+    '2026-10-9':  [{ title: 'Friday Night Quiz', sub: 'Navarasa × Quiz Club', cat: 'nrittarang', tag: NR, date: 'Fri, Oct 9', time: '9 pm onwards', poster: null }],
+    '2026-10-10': [
+      { title: 'Mindspark: Teach the Kids Dance', sub: 'Mindspark session with Navarasa', cat: 'nrittarang', tag: NR, date: 'Sat, Oct 10', time: '4 – 6 pm', location: 'Dance Room', poster: null },
+      { title: 'Spotlight', cat: 'nrittarang', tag: NR, date: 'Sat, Oct 10', time: '8 pm onwards', location: 'Amphi', poster: null },
+      { title: 'Garba Night', cat: 'october', tag: 'OCTOBER', date: 'Sat, Oct 10', poster: null }
+    ],
+    '2026-10-11': [{ title: 'External Workshop', cat: 'nrittarang', tag: NR, date: 'Sun, Oct 11', time: '11 am – 1 pm', location: 'Dance Room', poster: null }],
+    '2026-10-17': [{ title: 'Dance Reels', cat: 'october', tag: 'OCTOBER', date: 'Sat, Oct 17', poster: null }]
   };
+
 
   const MONTH_NAMES = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 
@@ -94,27 +104,21 @@ if (calendarGrid){
   let calMonthIndex = 9; // 0-indexed: October
 
   function openPoster(key){
-    const ev = calendarEvents[key];
-    if (!ev || !posterModal || !posterCard) return;
-    const tagClass = ev.cat === 'october' ? 'status-october' : 'status-monthly';
-
-    if (ev.poster){
-      posterCard.innerHTML = `
-        <img src="${ev.poster}" alt="${ev.title} poster">
+    const list = calendarEvents[key];
+    if (!list || !posterModal || !posterCard) return;
+    posterCard.innerHTML = list.map(ev => {
+      const tagClass = ev.cat === 'monthly' ? 'status-monthly' : ev.cat === 'nrittarang' ? 'status-nrittarang' : 'status-october';
+      const meta = [ev.time ? `<p class="poster-meta">🕘 ${ev.time}</p>` : '', ev.location ? `<p class="poster-meta">📍 ${ev.location}</p>` : ''].join('');
+      return `
+        ${ev.poster ? `<img src="${ev.poster}" alt="${ev.title} poster">` : ''}
         <div class="poster-body">
           <span class="tag ${tagClass} poster-tag">${ev.tag}</span>
           <h3>${ev.title}</h3>
+          ${ev.sub ? `<p class="poster-sub">${ev.sub}</p>` : ''}
           <p class="poster-date">${ev.date}</p>
+          ${meta}
         </div>`;
-    } else {
-      posterCard.innerHTML = `
-        <div class="poster-body">
-          <span class="tag ${tagClass} poster-tag">${ev.tag}</span>
-          <h3>${ev.title}</h3>
-          <p class="poster-date">${ev.date}</p>
-          <p class="poster-placeholder-note">Poster coming soon — once it's designed it'll show up right here. Meanwhile, check <a href="https://instagram.com/_navarasa_" target="_blank" rel="noopener">@_navarasa_</a> for updates.</p>
-        </div>`;
-    }
+    }).join('') + `<p class="poster-placeholder-note poster-foot">More on <a href="https://instagram.com/_navarasa_" target="_blank" rel="noopener">@_navarasa_</a></p>`;
     posterModal.classList.add('open');
   }
   if (posterCloseBtn) posterCloseBtn.addEventListener('click', () => posterModal.classList.remove('open'));
@@ -142,14 +146,16 @@ if (calendarGrid){
     for (let day = 1; day <= daysInMonth; day++){
       const key = `${calYear}-${calMonthIndex + 1}-${day}`;
       const cell = document.createElement('div');
-      const ev = calendarEvents[key];
+      const evs = calendarEvents[key];
       cell.style.setProperty('--d', day); // drives the cascade-in delay
-      if (ev){
+      if (evs){
         cell.className = 'cal-day marked';
+        const bars = evs.map(e => `<span class="dot-bar cat-${e.cat}"></span>`).join('');
+        const cap = evs.length > 1 ? `${evs.length} events` : evs[0].title;
         cell.innerHTML = `
           <span class="num">${day}</span>
-          <span class="dot-bar cat-${ev.cat}"></span>
-          <span class="cal-cap">${ev.title}</span>`;
+          <span class="dot-row">${bars}</span>
+          <span class="cal-cap">${cap}</span>`;
         cell.addEventListener('click', () => openPoster(key));
       } else {
         cell.className = 'cal-day';
